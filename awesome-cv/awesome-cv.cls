@@ -281,7 +281,7 @@
 % Usage: \email{<email adress>}
 \newcommand*{\email}[1]{\def\@email{#1}}
 
-% Defines writer's homepage (optional)
+% Defines writer's homepage using HTTP (optional)
 % Usage: \homepage{<url>}
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
@@ -342,6 +342,22 @@
 % Usage: \extrainfo{<extra informations>}
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
 
+% Defines writer's homepage using HTTPS (optional)
+% Usage: \homepagehttps{<url>}
+\newcommand*{\homepagehttps}[1]{\def\@homepagehttps{#1}}
+
+% Defines writer's date of birth (optional)
+% Usage: \birthday{<yyyy-mm-dd>}
+\newcommand*{\birthday}[1]{\def\@birthday{#1}}
+
+% Defines writer's bitbucket (optional)
+% Usage: \bithub{<bitbucket-nick>}
+\newcommand*{\bitbucket}[1]{\def\@bitbucket{#1}}
+
+% Defines writer's driving license (optional)
+% Usage: \drive{<driving license>}
+\newcommand*{\drive}[1]{\def\@drive{#1}}
+
 % Defines writer's quote (optional)
 % Usage: \quote{<quote>}
 \renewcommand*{\quote}[1]{\def\@quote{#1}}
@@ -389,6 +405,7 @@
 \newcommand{\acvHeaderAfterNameSkip}{.4mm}
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
+\newcommand{\acvHeaderAfterDetailsSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
@@ -473,6 +490,34 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
         }%
+      \ifthenelse{\isundefined{\@homepagehttps}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://\@homepagehttps}{\faMousePointer\acvHeaderIconSep\@homepagehttps}%
+        }%
+      \ifthenelse{\isundefined{\@birthday}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \faCalendar\acvHeaderIconSep\@birthday%
+        }%
+      \ifthenelse{\isundefined{\@drive}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \faCar\acvHeaderIconSep\@drive%
+        }%
+    } \\[\acvHeaderAfterDetailsSkip]%
+    \headersocialstyle{%
+      \newbool{isstart}%
+      \setbool{isstart}{true}%
+      \ifthenelse{\isundefined{\@linkedin}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
+        }%
       \ifthenelse{\isundefined{\@github}}%
         {}%
         {%
@@ -485,17 +530,17 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
         }%
+      \ifthenelse{\isundefined{\@bitbucket}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://bitbucket.com/\@bitbucket}{\faBitbucket\acvHeaderIconSep\@bitbucket}%
+        }%
       \ifthenelse{\isundefined{\@stackoverflowid}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
-        }%
-      \ifthenelse{\isundefined{\@linkedin}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@twitter}}%
         {}%
