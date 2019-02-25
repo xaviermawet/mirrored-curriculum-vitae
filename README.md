@@ -2,11 +2,10 @@
 
 Personal curriculum vitae and cover letter written in LaTeX.
 
-Libraries/Packages :
-
+## Libraries/Packages :
 - [ModernCV](https://www.ctan.org/pkg/moderncv)
 - [Awesome-CV](https://github.com/posquit0/Awesome-CV)
-- [LaTeX Templates](https://www.latextemplates.com/cat/curricula-vitae)
+- [Font Awesome](https://fontawesome.com/)
 
 ## Copyright
 
