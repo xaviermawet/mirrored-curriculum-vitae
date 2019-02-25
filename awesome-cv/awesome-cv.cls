@@ -150,6 +150,26 @@
 \definecolor{awesome-concrete}{HTML}{95A5A6}
 \definecolor{awesome-darknight}{HTML}{131A28}
 \colorlet{awesome}{awesome-red}
+% Material colors
+\definecolor{material-red}{HTML}{F44336}
+\definecolor{material-pink}{HTML}{E91E63}
+\definecolor{material-purple}{HTML}{9C27B0}
+\definecolor{material-deepPurple}{HTML}{673AB7}
+\definecolor{material-indigo}{HTML}{3F51B5}
+\definecolor{material-blue}{HTML}{2196F3}
+\definecolor{material-lightBlue}{HTML}{03A9F4}
+\definecolor{material-cyan}{HTML}{00BCD4}
+\definecolor{material-teal}{HTML}{009688}
+\definecolor{material-green}{HTML}{4CAF50}
+\definecolor{material-lightGreen}{HTML}{8BC34A}
+\definecolor{material-lime}{HTML}{CDDC39}
+\definecolor{material-yellow}{HTML}{FFEB3B}
+\definecolor{material-amber}{HTML}{FFC107}
+\definecolor{material-orange}{HTML}{FF9800}
+\definecolor{material-deepOrange}{HTML}{FF5722}
+\definecolor{material-brown}{HTML}{795548}
+\definecolor{material-grey}{HTML}{9E9E9E}
+\definecolor{material-blueGrey}{HTML}{607D8B}
 
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
@@ -446,6 +466,8 @@
 % Use to execute conditional statements by checking empty string
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
 
+% Use to display links in color
+\newcommand{\colorhref}[3][blue]{\href{#2}{\textcolor{#1}{#3}}}%
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of CV structure
