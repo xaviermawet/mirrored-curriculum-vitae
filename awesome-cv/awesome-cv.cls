@@ -92,7 +92,8 @@
   pdfsubject={},
   pdfkeywords={}
 }
-
+% Needed to use itemize with multiple columns
+\RequirePackage{multicol}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -513,7 +514,7 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \faAlternateMobile\acvHeaderIconSep\@mobile%
+          \href{tel:\@mobile}{\faAlternateMobile\acvHeaderIconSep\@mobile}%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
