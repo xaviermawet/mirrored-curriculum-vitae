@@ -92,7 +92,8 @@
   pdfsubject={},
   pdfkeywords={}
 }
-
+% Needed to use itemize with multiple columns
+\RequirePackage{multicol}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
