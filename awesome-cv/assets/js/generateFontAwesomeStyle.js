@@ -92,7 +92,7 @@ var preambule =`% This is autogenerate file.
 % ===     Copy content below into fontawesome5.sty     ===
 % ========================================================
 \\NeedsTeXFormat{LaTeX2e}
-\\ProvidesPackage{fontawesome5}[v5.7.2 Font Awesome Icons]
+\\ProvidesPackage{fontawesome5}
 % Requirements to use.
 \\usepackage{fontspec}
 % Define shortcut to load the Font Awesome font.

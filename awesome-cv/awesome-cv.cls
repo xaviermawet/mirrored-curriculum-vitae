@@ -514,7 +514,7 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \href{tel:\@mobile}{\faAlternateMobile\acvHeaderIconSep\@mobile}%
+          \href{tel:\@mobile}{\faAlternatePhone\acvHeaderIconSep\@mobile}%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
