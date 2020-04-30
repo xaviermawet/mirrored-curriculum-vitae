@@ -1,6 +1,6 @@
 # Font Awesome 5 for LaTeX
 
-## How to update `fontawesome5.sty`
+## How to update `fontawesome5-latest.sty`
 
 1. Download the latest "Font Awesome for Desktop" archive from the official [webiste](https://fontawesome.com/download).
 2. Extract latest `*.otf` files into `fonts` directory. Make sure that you replace all spaces with hyphen, e.g `Font Awesome 5 Brands-Regular-400.otf` should become `Font-Awesome-5-Brands-Regular-400.otf`.
@@ -9,4 +9,4 @@
 ```bash
 node generateFontAwesomeStyle.js
 ```
-5. Manually replace content of `fontawesome5.sty` with `fontawesome5-latest.sty`.
+5. Manually replace content of `fontawesome5-latest.sty`.

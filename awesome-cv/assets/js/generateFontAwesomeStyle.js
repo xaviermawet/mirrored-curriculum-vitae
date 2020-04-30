@@ -2,6 +2,7 @@
 Based on https://github.com/javydekoning/LaTeX-FontAwesome5 project.
 Authors:
     Javy de Koning <https://github.com/javydekoning>
+    Ilya Kisil <ilyakisil@gmail.com>
     Xavier Mawet <xavier@nakim.be>
 */
 
@@ -92,7 +93,7 @@ var preambule =`% This is autogenerate file.
 % ===     Copy content below into fontawesome5.sty     ===
 % ========================================================
 \\NeedsTeXFormat{LaTeX2e}
-\\ProvidesPackage{fontawesome5}
+\\ProvidesPackage{fontawesome5-latest}
 % Requirements to use.
 \\usepackage{fontspec}
 % Define shortcut to load the Font Awesome font.
