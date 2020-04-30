@@ -72,13 +72,13 @@
 \defaultfontfeatures{Ligatures=TeX}
 % Needed to manage math fonts
 \RequirePackage{unicode-math}
-% Needed to use icons from font-awesome
-% (https://github.com/posquit0/latex-fontawesome)
-%\RequirePackage{fontawesome}
-% Needed to use icons from font-awesome-5.
-% Icon definitions are based on (https://github.com/javydekoning/LaTeX-FontAwesome5)
-% Should override similar icon definitions in 'fontawesome'.
+% Needed to use icons from official Font Awesome 5 package for LaTeX
+% https://github.com/posquit0/Awesome-CV/pull/309
+% https://www.ctan.org/pkg/fontawesome5
 \RequirePackage{fontawesome5}
+% Needed to use icons from Font Awesome 5 (manual build)
+% https://github.com/posquit0/Awesome-CV/pull/258
+% \RequirePackage{fontawesome5-latest}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
@@ -145,6 +145,7 @@
 \definecolor{awesome-emerald}{HTML}{00A388}
 \definecolor{awesome-skyblue}{HTML}{0395DE}
 \definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-green}{HTML}{008F45}
 \definecolor{awesome-pink}{HTML}{EF4089}
 \definecolor{awesome-orange}{HTML}{FF6138}
 \definecolor{awesome-nephritis}{HTML}{27AE60}
@@ -187,8 +188,6 @@
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
-% Set the FontAwesome font to be up-to-date.
-%\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set the FontAwesome5 font to be up-to-date.
 \newfontfamily\FAB[
     Path=\@fontdir,
@@ -315,12 +314,16 @@
 \newcommand*{\mobile}[1]{\def\@mobile{#1}}
 
 % Defines writer's email (optional)
-% Usage: \email{<email adress>}
+% Usage: \email{<email address>}
 \newcommand*{\email}[1]{\def\@email{#1}}
 
 % Defines writer's homepage using HTTP (optional)
 % Usage: \homepage{<url>}
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
+
+% Defines writer's homepage using HTTPS (optional)
+% Usage: \homepagehttps{<url>}
+\newcommand*{\homepagehttps}[1]{\def\@homepagehttps{#1}}
 
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
@@ -378,10 +381,6 @@
 % Defines writer's extra informations (optional)
 % Usage: \extrainfo{<extra informations>}
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
-
-% Defines writer's homepage using HTTPS (optional)
-% Usage: \homepagehttps{<url>}
-\newcommand*{\homepagehttps}[1]{\def\@homepagehttps{#1}}
 
 % Defines writer's date of birth (optional)
 % Usage: \birthday{<yyyy-mm-dd>}
@@ -514,14 +513,16 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \href{tel:\@mobile}{\faAlternatePhone\acvHeaderIconSep\@mobile}%
+          \href{tel:\@mobile}{\faPhone*\acvHeaderIconSep\@mobile}%
+          %\href{tel:\@mobile}{\faAlternatePhone\acvHeaderIconSep\@mobile}%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{mailto:\@email}{\faEnvelopeOpenR\acvHeaderIconSep\@email}%
+          \href{mailto:\@email}{\faEnvelopeOpen[regular]\acvHeaderIconSep\@email}%
+          %\href{mailto:\@email}{\faEnvelopeOpenR\acvHeaderIconSep\@email}%
         }%
       \ifthenelse{\isundefined{\@homepage}}%
         {}%
@@ -539,7 +540,8 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \faCalendarR\acvHeaderIconSep\@birthday%
+          \faCalendar*[regular]\acvHeaderIconSep\@birthday%
+          %\faAlternateCalendarR\acvHeaderIconSep\@birthday%
         }%
       \ifthenelse{\isundefined{\@drive}}%
         {}%
@@ -555,19 +557,22 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedIn\acvHeaderIconSep\@linkedin}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
+          %\href{https://www.linkedin.com/in/\@linkedin}{\faLinkedIn\acvHeaderIconSep\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@github}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGitHub\acvHeaderIconSep\@github}%
+          \href{https://github.com/\@github}{\faGithub\acvHeaderIconSep\@github}%
+          %\href{https://github.com/\@github}{\faGitHub\acvHeaderIconSep\@github}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://gitlab.com/\@gitlab}{\faGitLab\acvHeaderIconSep\@gitlab}%
+          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+          %\href{https://gitlab.com/\@gitlab}{\faGitLab\acvHeaderIconSep\@gitlab}%
         }%
       \ifthenelse{\isundefined{\@bitbucket}}%
         {}%
@@ -597,19 +602,19 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.reddit.com/user/\@reddit}{\faRedditLogo\acvHeaderIconSep\@reddit}%
+          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
         }%
       \ifthenelse{\isundefined{\@xing}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.xing.com/profile/\@xing}{\faXing\acvHeaderIconSep\@xing}
+          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
         }%
       \ifthenelse{\isundefined{\@medium}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://medium.com/@\@medium}{\faMediumM\acvHeaderIconSep\@medium}%
+          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
         }%
       \ifthenelse{\isundefined{\@googlescholarid}}%
         {}%
