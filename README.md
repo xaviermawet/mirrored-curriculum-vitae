@@ -7,6 +7,6 @@ Personal curriculum vitae and cover letter written in LaTeX.
 - [Awesome-CV](https://github.com/posquit0/Awesome-CV)
 - [Font Awesome](https://fontawesome.com/)
 
-## Copyright
+## License
 
-Copyright &copy; 2019 [Xavier Mawet](https://www.nakim.be). All rights reserved.
+This project is licensed under the terms of the MIT license. See the [LICENSE.txt](LICENSE.txt) file for details.
