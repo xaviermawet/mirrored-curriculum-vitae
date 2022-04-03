@@ -9,4 +9,4 @@ Personal curriculum vitae and cover letter written in LaTeX.
 
 ## License
 
-This project is licensed under the terms of the MIT license. See the [LICENSE.txt](LICENSE.txt) file for details.
+This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
