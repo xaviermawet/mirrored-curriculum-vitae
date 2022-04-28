@@ -1,0 +1,37 @@
+\documentclass[11pt, a4paper]{custom-awesome-cv}
+
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% personal information
+\photo[right]{./assets/pictures/profile.jpg}
+\name{Xavier}{MAWET}
+\position{Software Engineer UX/UI \& Cloud{\enskip\cdotp\enskip}Industrial Engineer}
+\address{61, Rue de Verviers, 4651 Battice, BELGIUM}
+
+% first line (details)
+\mobile{+32 474 98 05 36}
+\email{xavier@nakim.be}
+\homepage{www.nakim.be}
+\dateofbirth{July 19, 1991}
+\extrainfo{\faCarSide\acvHeaderIconSep Driving licence (B)}
+
+% second line (social)
+\linkedin{xaviermawet}
+\github{xaviermawet}
+\bitbucket{xaviermawet}
+\extrasocialinfo{\href{https://gitlab.nakim.be}{\faGitlab\acvHeaderIconSep Self-hosted GitLab server}}
+
+\begin{document}
+
+\makecvheader
+\makecvfooter
+  {\today} % left
+  {Xavier MAWET~~~·~~~Curriculum Vitae} % center
+  {\thepage} % right
+
+\input{cv/experience.tex}
+\input{cv/skills.tex}
+\input{cv/education.tex}
+\input{cv/interests.tex}
+
+\end{document}
