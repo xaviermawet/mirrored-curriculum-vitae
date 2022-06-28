@@ -227,3 +227,7 @@
     \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}
   \end{minipage}
 }
+
+% Defines a message of opening for letter (cover letter only)
+% Usage: \letteropening{<message>}
+\renewcommand*{\letteropening}[1]{\def\@letteropening{\\#1}}
