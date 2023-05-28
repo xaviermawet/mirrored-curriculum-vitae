@@ -1,1 +1,1 @@
-awesome-cv/awesome-cv.cls
+submodules/awesome-cv/awesome-cv.cls

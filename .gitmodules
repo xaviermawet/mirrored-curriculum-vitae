@@ -1,3 +1,3 @@
-[submodule "fork-awesome-cv"]
-	path = awesome-cv
-	url = https://gitlab.nakim.be/fork/awesome-cv.git
+[submodule "awesome-cv"]
+	path = submodules/awesome-cv
+	url = ../../fork/awesome-cv.git
