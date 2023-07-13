@@ -97,7 +97,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{mailto:\@email}{\faEnvelopeOpenText\acvHeaderIconSep\@email}%
+          \href{mailto:\@email}{\faEnvelopeS\acvHeaderIconSep\@email}%
         }%
       \ifthenelse{\isundefined{\@homepage}}%
         {}%
