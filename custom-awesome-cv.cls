@@ -90,7 +90,7 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \href{tel:\@mobile}{\faPhone\acvHeaderIconSep\@mobile}%
+          \href{\@teluri}{\faPhone\acvHeaderIconSep\@mobile}%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
@@ -187,6 +187,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://kaggle.com/\@kaggle}{\faKaggle\acvHeaderIconSep\@kaggle}%
+        }%
+      \ifthenelse{\isundefined{\@hackerrank}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.hackerrank.com/\@hackerrank}{\faHackerrank\acvHeaderIconSep\@hackerrank}%
         }%
       \ifthenelse{\isundefined{\@googlescholarid}}%
         {}%
